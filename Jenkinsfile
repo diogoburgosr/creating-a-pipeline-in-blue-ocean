@@ -14,5 +14,13 @@ npm config set https-proxy http://10.0.101.43:3128
 npm install'''
       }
     }
+    stage('Test') {
+      environment {
+        CI = 'true'
+      }
+      steps {
+        sh './jenkins/scripts/test.sh'
+      }
+    }
   }
 }
